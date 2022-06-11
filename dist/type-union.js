@@ -13,3 +13,4 @@ getUsernameById('20');
 // let smallPicture: SquareSize = '200x200'; //Error
 let smallPicture = '100x100';
 let mediumPicture = '500x500';
+console.log(getUsernameById('20'));
