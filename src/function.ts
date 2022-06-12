@@ -39,3 +39,23 @@ let createPic = (title: string, date: string, size: SquareSize): object => {
 const picture = createPic('Platzi session', '2020-03-10', '100x100');
 console.log('picture', picture);
 
+
+function handleError(code: number, message: string): never | string {
+    if (message === 'error') {
+        throw new Error(`${message}. Code error: ${code}`);
+    }
+    else { 
+        return 'Ha ocurrifdo un error';
+    }
+
+    //console.log('error', code, message);
+}
+try {
+    
+let rs = handleError(200, 'ok');
+console.log('rs', rs);
+ rs = handleError(404, 'error');
+console.log('rs', rs);
+} catch (error) {
+    //console.log('error', error);
+}
