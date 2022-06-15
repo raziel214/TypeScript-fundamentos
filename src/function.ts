@@ -40,22 +40,21 @@ const picture = createPic('Platzi session', '2020-03-10', '100x100');
 console.log('picture', picture);
 
 
-function handleError(code: number, message: string): never | string {
-    if (message === 'error') {
+function handleError2(code: number, message: string): never | string {
+    // Procesamiento del codigo, mensaje
+    if(message === 'error') {
         throw new Error(`${message}. Code error: ${code}`);
+    } else {
+        return 'An error has occurred';
     }
-    else { 
-        return 'Ha ocurrifdo un error';
-    }
-
-    //console.log('error', code, message);
 }
+
+
 try {
-    
-let rs = handleError(200, 'ok');
-console.log('rs', rs);
- rs = handleError(404, 'error');
-console.log('rs', rs);
+    let result = handleError2(200, 'OK'); // string
+    console.log('result', result);
+    result = handleError2(404, 'error'); // never
+    console.log('result', result);
 } catch (error) {
-    //console.log('error', error);
+    
 }
