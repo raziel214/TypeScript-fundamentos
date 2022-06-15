@@ -8,6 +8,7 @@ Fundamentos de type script
 * [tuplas ]
 * [Aserciones ]
 * [Funciones ]
+* [Interfaces ]
 
 ## About
 este proyecto se compone de fundamentos del lenguaje Type Script.
