@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var PhotoOrientation;
 (function (PhotoOrientation) {
     PhotoOrientation[PhotoOrientation["Landscape"] = 0] = "Landscape";
@@ -7,31 +7,31 @@ var PhotoOrientation;
     PhotoOrientation[PhotoOrientation["Square"] = 2] = "Square";
     PhotoOrientation[PhotoOrientation["Panorama"] = 3] = "Panorama";
 })(PhotoOrientation || (PhotoOrientation = {}));
-var Picture = /** @class */ (function () {
-    function Picture(id, title, orientation) {
+class Picture {
+    constructor(id, title, orientation) {
         this.id = id;
         this.title = title;
         this.orientation = orientation;
     }
     // Comportamiento
-    Picture.prototype.toString = function () {
-        return "[id: ".concat(this.id, ", \n                 title: ").concat(this.title, ", \n                 orientation: ").concat(this.orientation, "]");
-    };
-    return Picture;
-}());
-var Album = /** @class */ (function () {
-    function Album(id, title) {
+    toString() {
+        return `[id: ${this.id}, 
+                 title: ${this.title}, 
+                 orientation: ${this.orientation}]`;
+    }
+}
+class Album {
+    constructor(id, title) {
         this.id = id;
         this.title = title;
         this.pictures = [];
     }
-    Album.prototype.addPicture = function (picture) {
+    addPicture(picture) {
         this.pictures.push(picture);
-    };
-    return Album;
-}());
-var album = new Album(1, 'Personal Pictures');
-var picture = new Picture(1, 'Platzi session', PhotoOrientation.Square);
+    }
+}
+const album = new Album(1, 'Personal Pictures');
+const picture = new Picture(1, 'Platzi session', PhotoOrientation.Square);
 album.addPicture(picture);
 console.log('album', album);
 // Accediendo a los miembros publicos
